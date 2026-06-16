@@ -1,12 +1,12 @@
+import java.util.LinkedList;
+import java.util.List;
+
 public class Game {
-    private Player player;
-    private Market market;
+    private Player player = new Player();
+    private List<Market> markets = new LinkedList<>();
 
     static void main() {
-        System.out.println("Hello, Benjamin und Gerald!");
-        System.out.println("Jamie is ein Picture!!!");
-        System.out.println("Gerald mag Denia(DIHHHHH)!!!");
-        System.out.println("HELLLLLLLOOOO");
-        System.out.println("Jamie hat einen Kleinen ;)");
+        // TODO: Markets
+        // TODO: Game loop
     }
 }
