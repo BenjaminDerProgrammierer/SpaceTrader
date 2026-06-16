@@ -1,2 +1,2 @@
-public class Market {
+public abstract class Market {
 }
