@@ -2,9 +2,9 @@ public class InventoryItem {
     private int count;
     private final ProductType product;
 
-    InventoryItem(ProductType product) {
+    InventoryItem(String name, int minPrice, int maxPrice) {
         this.count = 0;
-        this.product = product;
+        this.product = new ProductType(name, minPrice, maxPrice);
     }
 
     public ProductType getProduct() {

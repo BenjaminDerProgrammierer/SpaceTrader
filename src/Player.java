@@ -7,11 +7,15 @@ public class Player {
 
     public Player() {
         this.balance = 0;
-        this.inventory = new ArrayList<>();
 
-        for (ProductType currentType : ProductType.values()) {
-            inventory.add(new InventoryItem(currentType));
-        }
+        this.inventory = new ArrayList<>();
+        // read data/products.csv
+        
+        inventory.add(new InventoryItem("Meth", 0, 10));
+        inventory.add(new InventoryItem("Grünzeug", 0, 10));
+        inventory.add(new InventoryItem("Meth", 0, 10));
+        inventory.add(new InventoryItem("Meth", 0, 10));
+        inventory.add(new InventoryItem("Meth", 0, 10));
     }
 
     public int getBalance() {
