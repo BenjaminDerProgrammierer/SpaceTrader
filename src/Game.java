@@ -4,5 +4,6 @@ public class Game {
         System.out.println("Jamie is ein Picture!!!");
         System.out.println("Gerald mag Dihnia!!!");
         System.out.println("HELLLLLLLOOOO");
+        System.out.println("Jamie hat einen Kleinen ;)");
     }
 }
