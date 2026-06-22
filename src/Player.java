@@ -6,41 +6,9 @@ import java.util.List;
 
 public class Player {
     private static final int STARTING_MONEY = 200;
-    private static final Path PRODUCTS_CSV = Path.of("data", "products.csv");
 
-    private int balance;
-    private final List<InventoryItem> inventory;
-
-    public Player() {
-        this.balance = STARTING_MONEY;
-
-        this.inventory = new ArrayList<>();
-        loadProductsFromCsv();
-    }
-
-    private void loadProductsFromCsv() {
-        try (var reader = Files.newBufferedReader(PRODUCTS_CSV)) {
-            String line;
-            while ((line = reader.readLine()) != null) {
-                if (line.isBlank()) {
-                    continue;
-                }
-
-                String[] columns = line.split(",");
-                if (columns.length != 3) {
-                    throw new IllegalStateException("Invalid product row: " + line);
-                }
-
-                String name = columns[0].trim();
-                int minPrice = Integer.parseInt(columns[1].trim());
-                int maxPrice = Integer.parseInt(columns[2].trim());
-
-                inventory.add(new InventoryItem(name, minPrice, maxPrice));
-            }
-        } catch (IOException e) {
-            throw new IllegalStateException("Unable to read products CSV: " + PRODUCTS_CSV, e);
-        }
-    }
+    private int balance = STARTING_MONEY;
+    private final Inventory inventory = new Inventory();
 
     public int getBalance() {
         return balance;
