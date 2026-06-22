@@ -38,6 +38,6 @@ public class ProductType {
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, minPrice, maxPrice);
+        return Objects.hash(name);
     }
 }

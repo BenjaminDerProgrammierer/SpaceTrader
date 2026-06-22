@@ -5,7 +5,7 @@ public class Game {
     private final Player player = new Player();
     private final List<Market> markets = new LinkedList<>();
 
-    static void main() {
+    static void main(String[] args) {
         // https://patorjk.com/software/taag/#p=display&f=Rectangles&t=SpaceTrader&x=none&v=4&h=4&w=80&we=false
         System.out.println(" _____                 _____           _         ");
         System.out.println("|   __|___ ___ ___ ___|_   _|___ ___ _| |___ ___ ");
