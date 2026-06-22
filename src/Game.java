@@ -9,6 +9,9 @@ void main() {
     System.out.println("|_____|  _|__,|___|___| |_| |_| |__,|___|___|_|  ");
     System.out.println("      |_|                                        ");
 
+    for (Market market : markets) {
+        market.rollRound();
+    }
     // TODO: Markets
     // TODO: Game loop
 }
