@@ -8,7 +8,7 @@ public class Player {
     private static final int STARTING_MONEY = 200;
 
     private int balance = STARTING_MONEY;
-    private final Inventory inventory = new Inventory();
+    private final Inventory<InventoryItem> inventory = new Inventory<>(InventoryItem.class);
 
     public int getBalance() {
         return balance;
