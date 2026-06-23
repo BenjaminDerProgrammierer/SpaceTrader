@@ -1,4 +1,7 @@
 private static final int GAME_ROUNDS = 30;
+private static final String[] CITIES = new String[] {
+        "City1"
+};
 
 private final Player player = new Player();
 private final List<Market> markets = new LinkedList<>();
@@ -34,15 +37,45 @@ void main() {
         switch (choice) {
             case 'L':
                 System.out.println("LOAN SHARK");
+                System.out.printf("You currently have a debt of %d$ with a %.2f%% interest rate.%n", player.getDebt(), 10.0);
+
+                System.out.print("How much debt do you want to repay (in $): ");
+                int repaymentAmount = Integer.parseInt(scanner.next());
+
+                if (repaymentAmount < 0) {
+                    System.out.println("The amount cannot be negative!");
+                } else {
+                    player.removeMoney(repaymentAmount);
+                }
                 break;
             case 'B':
                 System.out.println("BANK");
+                System.out.printf("Your current balance is %d$ with a %.2f%% interest rate.%n", player.getBalance(), 2.0);
+
+                System.out.print("How much money do you want to deposit: ");
+                int depositAmount = Integer.parseInt(scanner.next());
+
+                if (depositAmount < 0) {
+                    System.out.println("The amount cannot be negative!");
+                } else {
+                    player.addMoney(depositAmount);
+                }
                 break;
             case 'J':
-                System.out.println("MARKET");
+                System.out.println("PRIVATE JET");
+                System.out.println("Cities: ");
+                for (int j = 0; j < CITIES.length; j++) {
+                    System.out.printf("%d. %s%n", i, CITIES[i]);
+                }
+                System.out.printf("What city do you want to move to (1 - %d): ", CITIES.length);
+                int cityIndex = Integer.parseInt(scanner.next()) - 1;
+
+                if (cityIndex < 0 || CITIES.length < cityIndex) {
+                    System.out.println("The city does not exist!");
+                }
                 break;
             case 'M':
-                System.out.println("PRIVATE JET");
+                System.out.println("MARKET");
                 break;
             default:
                 System.out.println("Invalid choice");
